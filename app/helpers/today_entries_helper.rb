@@ -1,0 +1,2 @@
+module TodayEntriesHelper
+end
