@@ -1,4 +1,4 @@
-<%= form_with url: "/", method: :post do |form| %>
+<%= form_with url: today_entries_update_path, method: :patch do |form| %>
   <% @entries.each do |entry| %>
     <% fields_for "entries[]", entry do |f| %>
     <% end %>
