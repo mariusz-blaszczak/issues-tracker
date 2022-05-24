@@ -1,1 +1,7 @@
-
+<%= form_with url: "/", method: :post do |form| %>
+  <% @entries.each do |entry| %>
+    <% fields_for "entries[]", entry do |f| %>
+    <% end %>
+  <% end %>
+  <%= form.submit "Save" %>
+<% end %>
