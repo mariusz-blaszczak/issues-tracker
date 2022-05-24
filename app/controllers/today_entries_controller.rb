@@ -4,6 +4,8 @@ class TodayEntriesController < ApplicationController
   end
 
   def update
-
+    params["entries"].each do |entry|
+      Entry.create!(issue_id: entry["issue_id"], answer: entry["answer"])
+    end
   end
 end
