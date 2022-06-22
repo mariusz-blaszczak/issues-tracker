@@ -1,3 +1,6 @@
 <h1>Charts</h1>
 
-
+<% Issue.all.each do |issue| %>
+  <h2><%= issue.name %></h2>
+  <%= line_chart(data_for_chart(issue)) %>
+<% end %>
