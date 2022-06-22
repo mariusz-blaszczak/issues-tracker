@@ -2,9 +2,9 @@
 <% Issue.all.each do |issue| %>
   <h2><%= issue.name %></h2>
   <%= form_with url: today_entries_update_path(issue_id: issue.id), method: :patch do %>
-    <%= render "button", value: 0 %>
-    <%= render "button", value: 1 %>
-    <%= render "button", value: 2 %>
-    <%= render "button", value: 3 %>
+    <%= render "button", value: 0, issue: issue %>
+    <%= render "button", value: 1, issue: issue %>
+    <%= render "button", value: 2, issue: issue %>
+    <%= render "button", value: 3, issue: issue %>
   <% end %>
 <% end %>
