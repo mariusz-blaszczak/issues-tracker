@@ -2,9 +2,9 @@
 <% Issue.all.each do |issue| %>
   <h2><%= issue.name %></h2>
   <%= form_with url: today_entries_update_path(issue_id: issue.id), method: :patch do %>
-    <button style="width: 21%; height: 50px" name="answer" value="0">0</button>
-    <button style="width: 21%; height: 50px" name="answer" value="1">1</button>
-    <button style="width: 21%; height: 50px" name="answer" value="2">2</button>
-    <button style="width: 21%; height: 50px" name="answer" value="3">3</button>
+    <%= render "button", value: 0 %>
+    <%= render "button", value: 1 %>
+    <%= render "button", value: 2 %>
+    <%= render "button", value: 3 %>
   <% end %>
 <% end %>
