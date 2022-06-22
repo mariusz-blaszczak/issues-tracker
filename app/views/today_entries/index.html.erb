@@ -1,7 +1,10 @@
-<%= form_with url: today_entries_update_path, method: :patch do |form| %>
-  <% @entries.each do |entry| %>
-    <% fields_for "entries[]", entry do |f| %>
-    <% end %>
+<h1>Issues:</h1>
+<% Issue.all.each do |issue| %>
+  <h2><%= issue.name %></h2>
+  <%= form_with url: today_entries_update_path(issue_id: issue.id), method: :patch do %>
+    <button style="width: 21%; height: 50px" name="answer" value="0">0</button>
+    <button style="width: 21%; height: 50px" name="answer" value="1">1</button>
+    <button style="width: 21%; height: 50px" name="answer" value="2">2</button>
+    <button style="width: 21%; height: 50px" name="answer" value="3">3</button>
   <% end %>
-  <%= form.submit "Save" %>
 <% end %>

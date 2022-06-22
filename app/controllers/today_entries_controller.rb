@@ -4,8 +4,9 @@ class TodayEntriesController < ApplicationController
   end
 
   def update
-    params["entries"].each do |entry|
-      Entry.create!(issue_id: entry["issue_id"], answer: entry["answer"])
-    end
+    issue = Issue.find(params.fetch("issue_id"))
+    Entry.create!(answer: params.fetch("answer"), issue: issue)
+
+    redirect_to today_entries_index_path
   end
 end
